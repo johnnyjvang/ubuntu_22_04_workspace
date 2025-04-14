@@ -1,8 +1,12 @@
 import cv2
 import numpy as np
 
-def generate_chessboard(square_size=50, grid_size=(9, 6), output_file="chessboard.png"):
-    board_width, board_height = grid_size
+def generate_chessboard_from_corners(square_size=50, inner_corners=(9, 6), output_file="chessboard.png"):
+    # Calculate number of squares based on inner corners
+    num_cols, num_rows = inner_corners
+    num_squares = (num_cols + 1, num_rows + 1)
+
+    board_width, board_height = num_squares
     image_size = (board_width * square_size, board_height * square_size)
     
     # Create the chessboard pattern
@@ -19,4 +23,4 @@ def generate_chessboard(square_size=50, grid_size=(9, 6), output_file="chessboar
     print(f"Chessboard image saved as {output_file}")
 
 # Example usage
-generate_chessboard(grid_size=(9, 6))
+generate_chessboard_from_corners(square_size=50, inner_corners=(9, 6))
