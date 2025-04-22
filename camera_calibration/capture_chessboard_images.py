@@ -25,5 +25,6 @@ def capture_chessboard_images(output_folder="calibration_images", num_images=20,
     cap.release()
     cv2.destroyAllWindows()
 
+
 # Example usage
 # capture_chessboard_images(num_images=20, grid_size=(9, 6))
